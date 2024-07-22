@@ -1,6 +1,7 @@
 # Authenticate to kubernetes using user certificate
 
 Generate an user private key and CSR as per this [article](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#normal-user), submit the request and approve it. <br>
+
 Create a csr.yaml file with the following content:
 ```
 apiVersion: certificates.k8s.io/v1
@@ -14,7 +15,7 @@ spec:
   usages:
   - client auth
 ```
-`kubectl apply -f csr.yaml` <br>
+and apply the configuration `kubectl apply -f csr.yaml` <br>
 
 Approve the request `kubectl certificate approve podadmin` <br>
 Create a role and rolebindings with yaml manifests <br>
@@ -32,4 +33,4 @@ provider "kubernetes" {
 }
 ```
 
-Test an example deployment
+Test an example deployment from the terraform folder
