@@ -29,7 +29,7 @@ kubectl apply -f rolebinding.yaml
 ```
 6. Extract user's signed certificate `kubectl get csr podadmin -o jsonpath='{.status.certificate}'| base64 -d > myuser.crt` <br>
 
-7. Extract the K8S CA cert kubectl `get cm kube-root-ca.crt -o jsonpath="{['data']['ca\.crt']}"` <br>
+7. Extract the K8S CA cert `kubectl get cm kube-root-ca.crt -o jsonpath="{['data']['ca\.crt']}"` <br>
 
 8. Configure terraform kuberentes provider configuration with user cert, key and kubernetes CA. <br>
 Kuberentes provider [documentation](https://registry.terraform.io/providers/hashicorp/kubernetes/latest/docs#credentials-config)
