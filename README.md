@@ -1,6 +1,7 @@
 # Authenticate to kubernetes using user certificate
 
 1. Generate an user private key and CSR as per this [article](https://kubernetes.io/docs/reference/access-authn-authz/certificate-signing-requests/#normal-user), submit the request and approve it. <br>
+For AWS EKS follow this [guide](https://docs.aws.amazon.com/eks/latest/userguide/cert-signing.html) 
 ```
 openssl genrsa -out myuser.key 2048
 openssl req -new -key myuser.key -out myuser.csr -subj "/CN=podadmin"
