@@ -18,6 +18,7 @@ spec:
   usages:
   - client auth
 ```
+you can get the content with this command `cat myuser.csr | base64 | tr -d "\n"` <br>
 and apply the configuration `kubectl apply -f csr.yaml` <br>
 
 3. Approve the request `kubectl certificate approve podadmin` <br>
